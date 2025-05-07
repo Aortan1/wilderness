@@ -1,0 +1,23 @@
+{
+  "name": "wilderness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass0": "sass scss:css --no-source-map --style=compressed --watch",
+    "sass": "sass --watch ./css/styles.scss ./css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aortan1/wilderness.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aortan1/wilderness/issues"
+  },
+  "homepage": "https://github.com/Aortan1/wilderness#readme"
+}
