@@ -158,7 +158,7 @@ img {
 
 /* Hero */
 .hero-section {
-  background: url("../images/hero-bg.jpg") center/cover no-repeat;
+  background: #87695f url("../images/hero-bg.webp") center/cover no-repeat;
   text-align: center;
   color: var(--light-text);
   padding: 6rem 1rem 1rem;
