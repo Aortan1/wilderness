@@ -71,6 +71,7 @@ p{
 }
 section{
   padding: 120px 0;
+  outline: 2px solid #000;
 }
 img{
   max-width: 100%;
@@ -131,10 +132,11 @@ img{
   padding: 20px 0;
   background-color: rgba(0,0,0,0.4);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 9999;
   .header-logo {
     font-size: 1.5rem;
     line-height: 1;
@@ -170,19 +172,30 @@ img{
 
 /* Hero */
 .hero-section {
-  background: #87695f url('../images/hero-bg.webp') center/cover no-repeat;
   text-align: center;
   color: var(--light-text);
-  padding: 6rem 1rem 1rem;
+  padding: 6rem 0 1rem;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  .hero-background{
+    width: 100%;
+    background: #87695f url('../images/hero-bg.webp') center/cover no-repeat;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
   .hero-container{
 
   }
   .hero-content{
+    position: relative;
     min-height: calc(100vh - 7rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
 
   .pre-title{
@@ -275,6 +288,34 @@ img{
 }
 
 /* Video */
+.reveal-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--accent-color);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+
+}
+.reveal-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 2px 2px 2px var(--accent-color);
+  transform: translateZ(0);
+  z-index: 2;
+  &.left{
+    left: 0;
+
+  }
+  &.right{
+    right:0;
+
+  }
+}
+
 .video-section {
   background-color: var(--accent-color);
   color: var(--light-text);
@@ -284,6 +325,7 @@ img{
   }
 
   .video-container {
+    padding-top: 50px;
     margin-top: 2rem;
     position: relative;
     background: transparent;
@@ -305,6 +347,9 @@ img{
       width: 6rem;
       height: 6rem;
     }
+  }
+  .play-video-container{
+
   }
 }
 
@@ -551,6 +596,7 @@ img{
 
 /* Featured */
 .featured-section {
+  outline: none;
   color: #000;
   .title{
     color: #000;
@@ -575,6 +621,7 @@ img{
 
 /* CTA */
 .cta-section {
+  outline: none;
   background: #9a8e81 url('../images/cta-bg.jpg') center/cover fixed no-repeat;
   color: var(--light-text);
   text-align: center;
@@ -620,6 +667,7 @@ img{
 
 /* Testimonials */
 .testimonials-section {
+  outline: none;
   background-color: #fff;
   .stars-wrapper{
     margin-top: 1.5rem;
@@ -666,6 +714,7 @@ img{
 
 /* FAQ */
 .faq-section {
+  outline: none;
   background-color: #efebe5;
   .pre-title{
     color:#505e69;

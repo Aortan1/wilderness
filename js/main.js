@@ -77,7 +77,86 @@ const options ={
 }
 
 $(document).ready(function(){
-    $('.play-video-container').playVideo();
+
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    let smoother = ScrollSmoother.create({
+        wrapper: '#main',
+        content: '#main-content',
+        smooth: 1.2,
+    });
+
+    gsap.from('.hero-content', {
+        opacity: 0,
+        y: 50,
+        scale: 0.7,
+        duration: 1,
+        scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top center'
+        }
+    });
+    gsap.from('.title-content', {
+        scale: 0.1,
+        opacity: 0.5,
+        scrollTrigger: {
+            trigger: ".awards-section",
+            start: "top bottom", // Start when the top of the element hits the bottom of the viewport
+            end: "center center",  // End when the bottom of the element hits the top of the viewport
+            scrub: true, // Smoothly animate the scale based on scroll
+            markers: false, // Optional: Show start/end markers for debugging
+        },
+    });
+    gsap.from('.awards', {
+        scale: 0.1,
+        opacity: 0.5,
+        scrollTrigger: {
+            trigger: ".awards-section",
+            start: "30% bottom",
+            end: "center center",
+            scrub: true,
+        },
+    });
+
+    gsap.to('.reveal-mask.left', {
+        x: '-100%',
+        duration: 1.5,
+        ease: 'power1.out',
+        scrollTrigger: {
+            trigger: '.reveal-wrapper',
+            start: 'top 80%',
+            //toggleActions: 'play play play play',
+            toggleActions: 'play none none none',
+            once: false
+        },
+    });
+
+    gsap.to('.reveal-mask.right', {
+        x: '100%',
+        duration: 1.5,
+        ease: 'power1.out',
+        scrollTrigger: {
+            trigger: '.reveal-wrapper',
+            start: 'top 80%',
+            //toggleActions: 'play play play play',
+            toggleActions: 'play none none none',
+            once: false
+        },
+    });
+    gsap.from('.title-block', {
+        scale: 0.1,
+        opacity: 0.5,
+        scrollTrigger: {
+            trigger: ".destinations-section",
+            start: "top bottom",
+            end: "center center",
+            scrub: true,
+        },
+    });
+
+    /*****/
+
+    //$('.play-video-container').playVideo();
 
     var splide = new Splide( '.splide', options );
 
@@ -102,7 +181,6 @@ $(document).ready(function(){
     splide.on('mounted move', (newIndex) => {
         updateProgress(newIndex);
     });
-
 
 
 
