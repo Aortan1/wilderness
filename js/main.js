@@ -143,7 +143,7 @@ $(document).ready(function(){
             once: false
         },
     });
-    gsap.from('.title-block', {
+    gsap.from('#destinations-title-block', {
         scale: 0.1,
         opacity: 0.5,
         scrollTrigger: {
