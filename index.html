@@ -18,6 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
     <script src="./js/main.js" defer></script>
+    <script src="./js/animations.js" defer></script>
 
 
     <link rel="stylesheet" href="./css/styles.css"/>
@@ -137,7 +138,7 @@
 
         <section class="video-section">
             <div class="container">
-                <div class="title-block">
+                <div class="title-block" id="video-title-block">
                     <p class="pre-title">
                         Discover
                     </p>
@@ -176,7 +177,7 @@
                     </p>
                 </div>
                 <div class="destinations-cards">
-                    <article class="card">
+                    <article class="card" id="card-1">
                         <img src="./images/card-1.jpg" alt="">
                         <h5 class="card-title">
                             Botswana
@@ -186,7 +187,7 @@
                             pristine wilderness areas of the Okavango Delta, Central Kalahari and Linyanti.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-2">
                         <img src="./images/card-2.jpg" alt="">
                         <h5 class="card-title">
                             Namibia
@@ -196,7 +197,7 @@
                             a photographer's dream.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-3">
                         <img src="./images/card-3.jpg" alt="">
                         <h5 class="card-title">
                             Zimbabwe
@@ -206,7 +207,7 @@
                             thrilling wildlife encounters.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-4">
                         <img src="./images/card-4.jpg" alt="">
                         <h5 class="card-title">
                             Rwanda
@@ -216,7 +217,7 @@
                             world’s mountain gorillas and a vast savannah teeming with iconic wildlife.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-5">
                         <img src="./images/card-5.jpg" alt="">
                         <h5 class="card-title">
                             Tanzania
@@ -226,7 +227,7 @@
                             Great Migration, Tanzania is spellbinding.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-6">
                         <img src="./images/card-6.jpg" alt="">
                         <h5 class="card-title">
                             Zambia
@@ -236,7 +237,7 @@
                             National Park, endless adventure awaits in Zambia.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-7">
                         <img src="./images/card-7.jpg" alt="">
                         <h5 class="card-title">
                             South Africa
@@ -246,7 +247,7 @@
                             nowhere quite like South Africa.
                         </p>
                     </article>
-                    <article class="card">
+                    <article class="card" id="card-8">
                         <img src="./images/card-8.jpg" alt="">
                         <h5 class="card-title">
                             Kenya
@@ -419,7 +420,7 @@
         <section id="how-it-works" class="how-it-works-section">
             <div class="container">
                 <div class="how-cols">
-                    <div class="col text-col">
+                    <div class="col text-col" id="how-text-col">
                         <p class="pre-title">
                             Planning
                         </p>
@@ -463,12 +464,12 @@
                     <div class="col img-col">
                         <div class="how-i-cols">
                             <div class="how-i-col col-1">
-                                <img src="./images/how-1.jpg" alt="">
-                                <img src="./images/how-2.jpg" alt="">
+                                <img src="./images/how-1.jpg" alt="" class="how-img" id="how-img-1">
+                                <img src="./images/how-2.jpg" alt="" class="how-img" id="how-img-2">
                             </div>
                             <div class="how-i-col col-2">
-                                <img src="./images/how-3.jpg" alt="">
-                                <img src="./images/how-4.jpg" alt="">
+                                <img src="./images/how-3.jpg" alt="" class="how-img" id="how-img-3">
+                                <img src="./images/how-4.jpg" alt="" class="how-img" id="how-img-4">
                             </div>
                         </div>
                     </div>
@@ -506,19 +507,25 @@
             </div>
         </section>
 
-        <section id="cta" class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <p class="pre-title">
-                        Tailor-made
-                    </p>
-                    <h2 class="title">Ready to take your own life-changing safari tour? </h2>
-                    <p class="text">Our travel designers will custom-design a journey across Africa filled with intimate encounters, dramatic landscapes an luxury safari lodges in pristine areas. Our industry-leading guides are passionate storytellers who look forward to sharing their love of Africa’s wild with you.</p>
-                    <a href="#contact" class="btn">Enquire now</a>
-                </div>
 
-            </div>
-        </section>
+            <section id="cta" class="cta-section">
+                <div class="cta-section-inner">
+                <div class="cta-background"><div class="cta-background-mask"></div></div>
+
+                    <div class="container">
+                        <div class="cta-content" id="cta-content">
+                            <p class="pre-title">
+                                Tailor-made
+                            </p>
+                            <h2 class="title">Ready to take your own life-changing safari tour? </h2>
+                            <p class="text">Our travel designers will custom-design a journey across Africa filled with intimate encounters, dramatic landscapes an luxury safari lodges in pristine areas. Our industry-leading guides are passionate storytellers who look forward to sharing their love of Africa’s wild with you.</p>
+                            <a href="#contact" class="btn">Enquire now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
 
         <section id="testimonials" class="testimonials-section">
             <div class="container">
@@ -668,8 +675,9 @@
         </section>
 
         <section class="bottom-cta-section">
+            <div class="b-cta-background"><div class="b-cta-background-mask"></div></div>
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content" id="b-cta-content">
                     <p class="pre-title">
                         Experience
                     </p>
@@ -679,29 +687,30 @@
                 </div>
             </div>
         </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-logo-wrap">
+                    <img src="./images/footer-logo.svg" class="footer-logo" alt="">
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul class="nav-list">
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li class="d-none"><a href="#">About</a></li>
+                        <li class="d-none"><a href="#">Terms</a></li>
+                        <li class="d-none"><a href="#">Blog</a></li>
+                        <li class="d-none"><a href="#">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="socials">
+                    <!-- social media icons here -->
+                </div>
+                <p class="copyright">&copy;Copyright ©2025 WIlderness Safaris. All rights reserved</p>
+            </div>
+        </footer>
     </div>
 </main>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-logo-wrap">
-            <img src="./images/footer-logo.svg" class="footer-logo" alt="">
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-            <ul class="nav-list">
-                <li><a href="#">Disclaimer</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li class="d-none"><a href="#">About</a></li>
-                <li class="d-none"><a href="#">Terms</a></li>
-                <li class="d-none"><a href="#">Blog</a></li>
-                <li class="d-none"><a href="#">Support</a></li>
-            </ul>
-        </nav>
-        <div class="socials">
-            <!-- social media icons here -->
-        </div>
-        <p class="copyright">&copy;Copyright ©2025 WIlderness Safaris. All rights reserved</p>
-    </div>
-</footer>
+
 </body>
 </html>
