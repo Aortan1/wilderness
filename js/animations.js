@@ -134,7 +134,7 @@ $(document).ready(function() {
                 trigger: ".how-it-works-section",
                 start: "top 70%",
                 toggleActions: "play none none none",
-                // scroller: "#smooth-wrapper" // если используешь ScrollSmoother
+                // scroller: "#smooth-wrapper"
             }
         });
         how_it_works_tl.to("#how-img-1", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" })
@@ -222,6 +222,26 @@ $(document).ready(function() {
                 end: "50% top",
                 scrub: true
             }
+        });
+
+
+        gsap.registerPlugin(ScrollToPlugin);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                const targetID = this.getAttribute("href");
+                const targetElem = document.querySelector(targetID);
+
+                if (targetElem) {
+                    e.preventDefault();
+
+                    ScrollSmoother.get().scrollTo(targetElem, {
+                        offsetY: 80,
+                        duration: 1,
+                        ease: "power2.out"
+                    });
+                }
+            });
         });
 
 

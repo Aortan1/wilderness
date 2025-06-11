@@ -324,6 +324,12 @@ img{
     width: 780px;
   }
 
+  .play-video-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+  }
   .video-container {
     padding-top: 50px;
     margin-top: 2rem;
@@ -338,9 +344,9 @@ img{
       align-items: center;
       position: absolute;
       z-index: 1;
-      top: 50%;
+      /*top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);*/
       background-color: rgba(255,255,255,0.05);
       border: 2px solid rgba(255,255,255,0.2);
       color: #fff;
