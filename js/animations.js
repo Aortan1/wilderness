@@ -137,11 +137,23 @@ $(document).ready(function() {
                 // scroller: "#smooth-wrapper"
             }
         });
+        const camps_tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".camps-section",
+                start: "top 70%",
+                toggleActions: "play none none none",
+                // scroller: "#smooth-wrapper"
+            }
+        });
         how_it_works_tl.to("#how-img-1", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" })
             .to("#how-img-3", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "+=0.2")
             .to("#how-img-2", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "+=0.2")
             .to("#how-img-4", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "+=0.2")
             .to("#how-text-col", { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, "+=0.2");
+
+        camps_tl.to("#splide01-slide01", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" })
+            .to("#splide01-slide02", { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "+=0.2")
+            .to("#splide01-slide03", { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, "+=0.2");
 
 
 
