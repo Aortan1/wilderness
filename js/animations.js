@@ -44,7 +44,8 @@ $(document).ready(function() {
                 scrub: true,
             },
         });
-        gsap.from('.title-content', {
+
+        /*gsap.from('.title-content', {
             scale: 0.6,
             opacity: 0.5,
             scrollTrigger: {
@@ -64,7 +65,7 @@ $(document).ready(function() {
                 end: "center center",
                 scrub: true,
             },
-        });
+        }); */
 
         gsap.to('.reveal-mask.left', {
             x: '-100%',
@@ -91,7 +92,8 @@ $(document).ready(function() {
                 once: false
             },
         });
-        gsap.from('#destinations-title-block', {
+
+        /*gsap.from('#destinations-title-block', {
             scale: 0.6,
             opacity: 0.5,
             scrollTrigger: {
@@ -100,7 +102,7 @@ $(document).ready(function() {
                 end: "center center",
                 scrub: true,
             },
-        });
+        });*/
 
 
         const destination_tl_1 = gsap.timeline({
@@ -236,6 +238,36 @@ $(document).ready(function() {
             }
         });
 
+        /*** Elements with classes 'appear-1,appear-2,...'appear one after another, regardless of their number.***/
+        document.querySelectorAll("section").forEach(section => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 60%",
+                    toggleActions: "play none none none",
+                }
+            });
+            const appearElements = Array.from(section.querySelectorAll("[class*='appear-']"))
+                .sort((a, b) => {
+                    const getOrder = el => {
+                        const match = el.className.match(/appear-(\d+)/);
+                        return match ? parseInt(match[1]) : 0;
+                    };
+                    return getOrder(a) - getOrder(b);
+                });
+
+            console.log('!! appearElements.length: ', appearElements.length)
+
+            appearElements.forEach(el => {
+                tl.to(el, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                }, "+=0.1");
+            });
+        })
+        /////
 
         gsap.registerPlugin(ScrollToPlugin);
 

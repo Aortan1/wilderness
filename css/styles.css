@@ -597,7 +597,7 @@ img {
   margin-top: 5rem;
 }
 
-.how-img,
+[class*=appear-], .how-img,
 #how-text-col, .destinations-section .card,
 #splide01-slide01, #splide01-slide02, #splide01-slide03 {
   opacity: 0;
@@ -869,7 +869,7 @@ img {
   .reveal-mask {
     display: none;
   }
-  .how-img,
+  [class*=appear-], .how-img,
   #how-text-col, .destinations-section .card,
   #splide01-slide01, #splide01-slide02, #splide01-slide03 {
     opacity: 1;
