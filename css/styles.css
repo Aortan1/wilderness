@@ -652,7 +652,7 @@ img {
   left: 0;
 }
 .cta-section .cta-background {
-  background: #9a8e81 url("../images/cta-bg.jpg") center/cover fixed no-repeat;
+  background: #9a8e81 url("../images/cta-bg.jpg") 20% 0/cover fixed no-repeat;
   inset: 0;
   z-index: 0;
 }
@@ -871,7 +871,8 @@ img {
   }
   [class*=appear-], .how-img,
   #how-text-col, .destinations-section .card,
-  #splide01-slide01, #splide01-slide02, #splide01-slide03 {
+  #splide01-slide01, #splide01-slide02, #splide01-slide03,
+  #video-title-block {
     opacity: 1;
     transform: none;
   }
